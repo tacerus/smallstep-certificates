@@ -62,7 +62,7 @@ func NewProvisioner(name, kid, caURL string, password []byte, opts ...ClientOpti
 		Client:        client,
 		name:          name,
 		kid:           jwk.KeyID,
-		audience:      client.endpoint.ResolveReference(&url.URL{Path: "/1.0/sign"}).String(),
+		audience:      client.endpoint.ResolveReference(&url.URL{Path: "/1.0/revoke"}).String(),
 		sshAudience:   client.endpoint.ResolveReference(&url.URL{Path: "/1.0/ssh/sign"}).String(),
 		fingerprint:   fp,
 		jwk:           jwk,
